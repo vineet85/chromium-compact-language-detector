@@ -21,7 +21,7 @@ try:
     output = output.decode('UTF-8')
     error = error.decode('UTF-8')
     if len(error) != 0:
-        sys.stderr.write('`pkg-config --libs --cflags cld` returns in error: \n' + error + '\n')
+        sys.stderr.write('`pkg-config --libs --cflags cld` returns an error: \n' + error + '\n')
         raise OSError
 except (subprocess.CalledProcessError, OSError):
     sys.stderr.write('The `cld` C++ library is absent from this system. Please install it.\n')
